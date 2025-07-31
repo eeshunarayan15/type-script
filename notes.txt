@@ -1,0 +1,96 @@
+npm install -g typescipt ---> comman to install the typescritp globally
+
+then create the java-script project using this command
+--->        npm init -y
+
+command to create the tsConfig.json
+npx tsc --init
+
+now install the npm packages using this command
+
+---->  npm install
+
+command to compile ths typescript file into javascript
+---> npx tsc -b
+
+
+tsconfig.json → target option
+The "target" option in tsconfig.json tells TypeScript which version of JavaScript to compile your code into.
+
+✅ Syntax:
+json
+Copy
+Edit
+{
+  "compilerOptions": {
+    "target": "ES2020"
+  }
+}
+
+🔧 1. rootDir
+📌 What it does:
+Specifies the source folder where your .ts files live.
+
+✅ Example:
+json
+Copy
+Edit
+{
+  "compilerOptions": {
+    "rootDir": "./src"
+  }
+}
+📁 Folder structure:
+
+pgsql
+Copy
+Edit
+project/
+├── src/          <-- TypeScript source files
+│   └── app.ts
+├── dist/         <-- Compiled JavaScript goes here
+└── tsconfig.json
+This tells TypeScript: “Only look for .ts files starting from src/”.
+
+🔧 2. outDir
+📌 What it does:
+Specifies where the compiled .js files should go.
+
+✅ Example:
+json
+Copy
+Edit
+{
+  "compilerOptions": {
+    "outDir": "./dist"
+  }
+}
+TypeScript takes files from rootDir, compiles them, and puts the result in outDir.
+
+💥 3. noImplicitAny
+📌 What it does:
+If true, TypeScript will show an error if a variable or function argument has no type and TypeScript has to guess it as any.
+
+json
+Copy
+Edit
+{
+  "compilerOptions": {
+    "noImplicitAny": true
+  }
+}
+✅ Good:
+ts
+Copy
+Edit
+function greet(name: string) {
+  console.log("Hello", name);
+}
+❌ Error with noImplicitAny: true:
+ts
+Copy
+Edit
+function greet(name) {
+  console.log("Hello", name);
+  // Error: Parameter 'name' implicitly has an 'any' type.
+}
