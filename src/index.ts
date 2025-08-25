@@ -219,20 +219,21 @@
 // console.log(result)
 //abstract class in TypeScript
 
-// abstract class Animal {
-//   abstract makeSound(): void; // must be implemented by subclass
+abstract class Animal {
+  abstract makeSound(): void; // must be implemented by subclass
 
-//   move(): void {
-//     console.log("Moving...");
-//   }
-// }
+  move(): void {
+    console.log("Moving...");
+  }
+}
 
-// class Dog extends Animal {
-//   makeSound(): void {
-//     console.log("Woof!");
-//   }
-// }
+class Dog extends Animal {
+  makeSound(): void {
+    console.log("Woof!");
+  }
+}
 
-// const dog = new Dog();
-// dog.makeSound(); // Woof!
-// dog.move();      // Moving...
+const dog = new Dog();
+dog.makeSound(); // Woof!
+dog.move();      // Moving...
+console.log("helo world");
